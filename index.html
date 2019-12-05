@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+
+<html> <!--Balise racine du document HTML -->
+    <head>
+            <meta charset="utf-8"> <!-- charset c'est un attribut de balise, "utf-8" c'est la valeur de l'attribut-->
+        
+        <title>Mes recettes de cuisine </title> <!-- tu peux pas mettre title dans body-->
+        <!-- Stylesheets-->
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+        <header class="row">
+            <h1 class="col-12">Hello mes recettes de cuisine</h1>
+        </header>
+        <main class="row">
+            <section id="receipe-forms" class="col-lg-4 col-12"><!-- section contient des éléments de nature différentes mais qui ont un sens commun-->
+                <!-- here, forms to create receipe and products--><!-- First : receipe creation form -->
+                <form>
+                    <fieldset>
+                        <div class="form-group">
+                            <input type="text" 
+                                   name="receipe-title"
+                                   id="receipe-title"
+                                   placeholder="Receipe title..." 
+                                   class="form-control">
+
+                        </div>
+                        <div class="form-group">
+                                <input type="number" 
+                                       name="receipe-quantity"
+                                       id="receipe-quantity"
+                                       value="1"
+                                       min="1"
+                                       max="50"
+                                       step="5"
+                                       placeholder="Receipe quantity..." 
+                                       class="form-control">
+    
+                         </div>
+                         <div class="button-group float-right">
+                             <button type="button"
+                                     name="create-receipe"
+                                     id="create-receipe"
+                                     class="btn btn-outline-success">
+                                    Créer
+                             </button>
+
+                         </div>
+
+                    </fieldset>
+                </form>
+            </section>
+
+            <aside id="receipe-results" class="col-lg-8 col-12"><!-- aside va apporter ue sémantique supplémentaire à la balise immédiatement adjacente-->
+                <!-- Results of the receipe -->
+                <table class="table table-condensed table-striped ">
+                    <thead> <!-- header of the table -->
+                        <tr> <!-- table row-->
+                            <th class="form-check"><input type="checkbox" name="select-all-ingredients" id="select-all"><!--th c'est un header cell-->
+                            <th>Ingrédients</th>
+                            <th>Quantité</th>
+                            <th>Coût unitaire (&euro;)</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody> <!-- Rows of the table -->
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="select-farine" id="select-farine">
+                            </td><!-- Table divider-->
+                            <td>Farine</td>
+                            <td>300g</td>
+                            <td>0.54</td>
+
+                        </tr>
+
+                    </tbody>
+
+                    <tfoot> <!-- Footer of the table -->
+                        <tr>
+                            <td colspan="3">
+                                Receipe total :
+
+                            </td>
+                            <td class="total-receipe">
+                                99,99€
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Cost of a piece of receipe :
+                            </td>
+                            <td class="total-receipe">
+                                99,99€
+                            </td>
+                    
+                        </tr>
+
+                    </tfoot>
+                </table>
+            </aside>               
+            
+
+        </main>
+
+        <footer class="row">
+            <ul class="list-unstyled"> <!-- Conteneur de lignes de liste-->
+                <li>Mentions légales</li>
+                <li>CGU</li>
+                <li>&copy; Aélion 2019</li>
+
+            </ul>
+        </footer>
+        </div>
+
+    </body>
+
+
+</html>

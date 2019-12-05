@@ -4,34 +4,36 @@
  * @version 1.0.0
  * @package models
  */
-export class ProductModel {
+export abstract class ProductModel {
     /**
      * @var string
      * 
      * Name of the product (i.e : Lait, Farine, Oeuf, ...)
      */
-    private name: string;
+    protected name: string;
 
     /**
      * @var string
      * 
      * Base unit for the quantities of a product (i.e : l, kg, unity, ...)
      */
-    private baseUnit: string;
+    protected baseUnit: string;
 
     /**
      * @var number
      * 
      * Price of a product
      */
-    private price: number;
+    protected price: number;
+
+    protected targetQuantity: number;
 
     /**
      * @var number
      * 
      * Sets the strategy to use to display product line
      */
-    private strategy: number;
+    protected strategy: number;
 
     /**
      * 
@@ -40,6 +42,9 @@ export class ProductModel {
      * Sets the strategy to display product line
      * Only 1, 2 or 3, fallback to 1
      */
+
+    protected quantityUnit: number;
+
     public setStrategy(strategy: number): void {
         if (strategy > 0 && strategy <= 3) {
             this.strategy = strategy;
@@ -72,6 +77,14 @@ export class ProductModel {
 
     public getPrice(): number {
         return this.price;
+    }
+
+    public setQuantityUnit(quantityUnit: number): void {
+        this.quantityUnit = quantityUnit;
+    }
+
+    public getQuantityUnit(): number {
+        return this.quantityUnit;
     }
 
     public toString(): string {
